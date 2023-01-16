@@ -1,0 +1,5 @@
+<h1> {{ !data ? 'Add' : 'Edit' }} Tag </h1>
+<input [formControl]="tagControl" type="text">
+<hr>
+<button (click)="submit()">{{ !data ? 'Add' : 'Edit' }}</button>
+<button (click)="matDialogRef.close()">cancel</button>

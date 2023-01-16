@@ -1,0 +1,31 @@
+h1 {
+    color: red;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: wheat;
+    gap: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a.active {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+.admin-menu {
+	padding: 15px;
+	background-color: #ccc;
+	display: flex;
+	gap: 0 15px;
+}

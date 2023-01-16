@@ -1,0 +1,14 @@
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    padding: 5px;
+    gap: 15px;
+}
+
+a.active {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}

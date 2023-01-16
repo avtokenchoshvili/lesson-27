@@ -1,0 +1,18 @@
+<nav>
+  <a routerLinkActive="active" routerLink="/main">Main</a>
+  <a routerLinkActive="active" routerLink="/product">Products</a>
+  <a routerLinkActive="active" routerLink="/blog-list">Blogs</a>
+  <a routerLinkActive="active" routerLink="/admin">Admin</a>
+  <a routerLinkActive="active" routerLink="/contact">Contact</a>
+  <!-- login button -->
+  <a *ngIf="!(loginService.isLoggedIn$ | async)" routerLinkActive="active" routerLink="/login">Login</a>
+  <!-- logout button -->
+  <button *ngIf="loginService.isLoggedIn$ | async" (click)="loginService.logout()">logout</button>
+</nav>
+<div *ngIf="loginService.isAdmin$ | async" class="admin-menu">
+	<a routerLink="add-blog">add blog</a>
+	<a routerLink="admin/categories">categories</a>
+	<a routerLink="admin/tags">tags</a>
+	<a routerLink="admin/quiz">quiz</a>
+</div>
+<router-outlet></router-outlet>

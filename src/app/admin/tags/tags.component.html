@@ -1,0 +1,6 @@
+<div *ngFor="let tag of tags$ | async">
+  {{ tag.title }}
+  <button (click)="addTag(tag)">edit</button>
+  <button (click)="delete(tag._id)">delete</button>
+</div>
+<button (click)="addTag()">add tag</button>

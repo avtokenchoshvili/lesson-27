@@ -1,0 +1,49 @@
+<form [formGroup]="form" class="container">
+	<h1>add quiz</h1>
+
+	<div>
+		<input formControlName="title" type="text" placeholder="title">
+	</div>
+	<div>
+		<input formControlName="smallDescr"  type="text" placeholder="small descr">
+	</div>
+	<div>
+		<textarea formControlName="descr"  type="text" placeholder="description"></textarea>
+	</div>
+
+	<button (click)="addAnswersDialog()">add question</button>
+	<hr>
+	<div *ngFor="let el of data.questions">
+<h5>{{el.question}}</h5>
+
+<ul>
+	<li *ngFor="let ans of el.answers"> 
+		{{ans.answer}}
+	</li>
+</ul>
+	</div>
+
+</form>
+<hr>
+<button (click)="addQuiz()">add all</button>
+
+
+<h2>get Quizz</h2>
+<div *ngFor="let quiz of allQuizz$ |async">
+
+<h1>{{quiz.title}}</h1>
+<h3>{{quiz.smallDescr}}</h3>
+<h3> {{quiz.descr}}</h3>
+<div *ngFor="let item of quiz.questions ">
+<h2>kitxva {{item.question}}</h2>
+<div *ngFor=" let i of item.answers">
+<h3> pasuxi{{i.answer}}</h3>
+</div>
+
+</div>
+<button (click)="deleteQuizz(quiz._id)"> delete </button>
+<button (click)="editQuizzes(quiz,quiz._id )"> edit </button>
+
+</div>
+
+

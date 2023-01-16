@@ -1,0 +1,6 @@
+<div class="list">
+    <a routerLink="/product/detail/{{product.id}}" class="card" *ngFor="let product of products">
+        <span>{{product.title}}</span>
+        <p>{{product.descr | dot}}</p>
+    </a>
+</div>

@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+  <div>
+    <input formControlName="title" placeholder="title" type="text" />
+  </div>
+  <div>
+    <input formControlName="descr" placeholder="descr" type="text" />
+  </div>
+  <div>
+    <input formControlName="metaKeyword" placeholder="metaKeyword" type="text" />
+  </div>
+  <div>
+    <input formControlName="metaDescr" placeholder="metaDescr" type="text" />
+  </div>
+  <div>
+    <input formControlName="metaAuthor" placeholder="metaAuthor" type="text" />
+  </div>
+  <div>
+    <input (change)="selectImage($event)" multiple placeholder="img" type="file" />
+  </div>
+  <div>
+    <input formControlName="isFavorite" placeholder="isFavorite" type="checkbox" />
+  </div>
+  <div style="background-color: #ccc;" *ngIf="data">
+    <img *ngIf="data.img" [src]="data.img" width="100px" height="60px" alt="category image">
+  </div>
+  <button (click)="submit()">{{ data ? 'edit' : 'add' }}</button>
+</form>

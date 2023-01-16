@@ -1,0 +1,4 @@
+<a routerLink="/blog-detail/{{blog._id}}" *ngFor="let blog of blogs$ | async">
+	<h1>{{blog.title}}</h1>
+	<div [innerHTML]="blog.description"></div>
+</a>

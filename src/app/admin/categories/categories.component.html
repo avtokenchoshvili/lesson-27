@@ -1,0 +1,8 @@
+<div *ngFor="let cat of categories$ | async">
+	<div>
+		{{cat.title}} 
+		<button (click)="addCategory(cat)">edit</button>
+		<button (click)="delete(cat._id)">delete</button>
+	</div>
+</div>
+<button (click)="addCategory()">add category</button>
